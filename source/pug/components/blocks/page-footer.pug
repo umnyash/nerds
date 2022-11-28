@@ -1,0 +1,19 @@
+mixin page-footer
+  footer.page-footer&attributes(attributes)
+    section.contacts
+      h2.visually-hidden Контакты
+      .map
+        picture.map__image-wrapper
+          img.map__image(src='img/location.png' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')
+      .container
+        .contacts-card
+          h3.contacts-card__heading Nёrds design studio
+          p.contacts-card__item наб. Реки Карповки,#[br] 5 лит П, Санкт-Петербург
+          a.contacts-card__item(href='tel:+78005558628') +7 800 555-86-28
+          +button('a', 'Напишите нам', '', '#!')(class='contacts-card__button')
+    .page-footer__socials
+      .container
+        +socials(class='page-footer__socials')
+        .footer__socials-text-wrapper
+          p.footer__socials-slogan Давайте дружить, это выгодно!
+          p Скидка 10% для друзей из социальных сетей

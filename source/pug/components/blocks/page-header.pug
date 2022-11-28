@@ -1,0 +1,18 @@
+mixin page-header
+  header.page-header&attributes(attributes)
+    .container
+      a.logo
+        img(src='img/logo.svg' width='160' height='66' alt='Логотип в виде надписи nёrd\'s')
+      nav.page-header__navigation
+        ul.site-navigation
+          li.site-navigation__item
+            a.site-navigation__link(href='#!') Студия
+          li.site-navigation__item
+            a.site-navigation__link(href='#!') Клиенты
+          li.site-navigation__item
+            a.site-navigation__link(href='#!') Магазин
+          li.site-navigation__item
+            a.site-navigation__link(href='#!') Контакты
+        ul.user-navigation
+          li.user-navigation__item
+            a.user-navigation__link(href='#!') Корзина

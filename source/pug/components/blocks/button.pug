@@ -1,0 +1,5 @@
+mixin button(tag, text, type, link)
+  if tag === 'button'
+    button.button(type=type)&attributes(attributes)=text
+  else if tag === 'a'
+    a.button(href=link)&attributes(attributes)=text

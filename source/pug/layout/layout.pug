@@ -1,0 +1,14 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='css/style.css')
+    meta(name='description' content='Разработка веб-сайтов, мобильных приложений, слайдшоу и видео для презентаций.')
+    meta(name='keywords' content='Нёрдс, разработка, веб-сайт, мобильное приложение, слайдшоу, презентация, видео')
+  body
+    include ../components/components
+    +page-header
+    block content
+    +page-footer
+
