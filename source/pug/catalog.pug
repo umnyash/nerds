@@ -1,0 +1,98 @@
+extends layout/layout
+
+block content
+  main.catalog-page
+    header.main-header
+      h1.visually-hidden Магазин готовых шаблонов
+    section.catalog
+      .container
+        form.filter(action='https://echo.htmlacademy.ru/courses' method='get')
+          fieldset
+            legend Стоимость:
+          fieldset
+            legend Сетка:
+            ul.filter__options
+              li.filter__option
+                label.radiobutton
+                  input(type='radio' name='grid' checked)
+                  span Адаптивная
+              li.filter__option
+                label.radiobutton
+                  input(type='radio' name='grid')
+                  span Фиксированная
+              li.filter__option
+                label.radiobutton
+                  input(type='radio' name='grid')
+                  span Резиновая
+          fieldset
+            legend Особенности:
+            ul.filter__options
+              li.filter__option
+                label.checkbox
+                  input(type='checkbox' name='slider' checked)
+                  span Слайдер
+              li.filter__option
+                label.checkbox
+                  input(type='checkbox' name='advantages')
+                  span Блок преимуществ
+              li.filter__option
+                label.checkbox
+                  input(type='checkbox' name='news' checked)
+                  span Новости
+              li.filter__option
+                label.checkbox
+                  input(type='checkbox' name='gallery')
+                  span Галерея
+              li.filter__option
+                label.checkbox
+                  input(type='checkbox' name='cart')
+                  span Корзина
+          .filter__controls
+            +button('button', 'Показать', 'submit')
+        dl.sorting
+          dt Сортировать:
+          dd
+            ul
+              li
+                a(href='#!') По цене
+              li
+                a(href='#!') По типу
+              li
+                a(href='#!') По названию
+          dd
+            ul
+              li
+                a(href='#!')
+                  span.visually-hidden По убыванию
+              li
+                a(href='#!')
+                  span.visually-hidden По возрастанию
+        ul.products
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-1.png' width='358' height='578' alt='Макет сайта для небольшого туристического городка Седоны.')
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-2.png' width='358' height='578' alt='Макет сайта для мобильного приложения PINK.')
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-3.png' width='358' height='578' alt='Макет сайта для барбершопа BORODINSKI.')
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-4.png' width='358' height='578' alt='Макет сайта-магазина милых ручных изделий MISHKA.')
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-5.png' width='358' height='578' alt='Макет сайта для учебного заведения.')
+          li.product
+            picture.product__img-wrapper
+              img.product__img(src='img/products/product-6.png' width='358' height='578' alt='Макет сайта-магазин крафтового квасас КВАСТ.')
+        .pagination
+          ul.pagination__list
+            li.pagination__item
+              a.pagination__link.pagination__link--current 1
+            li.pagination__item
+              a.pagination__link.pagination__link--current(href='#!') 2
+            li.pagination__item
+              a.pagination__link.pagination__link--current(href='#!') 3
+            li.pagination__item
+              a.pagination__link.pagination__link--next(href='#!') Следующая
