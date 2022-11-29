@@ -2,4 +2,97 @@ extends layout/layout
 
 block content
   main
-    h1 Главная страница
+    h1.visually-hidden Дизайн-студия "Nёrds"
+    section.features
+      .container
+        h2.visually-hidden Особенности нашей студии
+        .features__slider.slider
+          ul.slider__list
+            li.slider__item
+              section.banner
+                h3.banner__heading Долго, дорого, скрупулёзно
+                p.banner__text Математически выверенный дизайн для вашего сайта или мобильного приложения.
+                +button('a', 'Узнать больше', '', '#!')
+            li.slider__item
+              section.banner
+                h3.banner__heading Любим математику как никто другой
+                p.banner__text Никакого креатива, только математические формулы для расчета идеальных пропорций.
+                +button('a', 'Узнать больше', '', '#!')
+            li.slider__item
+              section.banner
+                h3.banner__heading Только ночь, только хардкор
+                p.banner__text Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.
+                +button('a', 'Узнать больше', '', '#!')
+          ul.slider__slides-buttons
+            li.slider__slide-button-wrapper
+              button.slide-button(type='button')
+                span.visually-hidden Показать слайд № 1
+            li.slider__slide-button-wrapper
+              button.slide-button(type='button')
+                span.visually-hidden Показать слайд № 2
+            li.slider__slide-button-wrapper
+              button.slide-button(type='button')
+                span.visually-hidden Показать слайд № 3
+    section.services
+      .container
+        h2.visually-hidden Услуги
+        ul.services__list
+          li.services__item
+            h3.services__name Веб-сайты
+            p.services__text Мир никогда не будет прежним после того как увидит ваш сайт!
+            +button('a', 'Заказать', '', '#!')
+          li.services__item
+            h3.services__name Приложения
+            p.services__text Покорите топ-10 приложений в AppStore и Google Play
+            +button('a', 'Заказать', '', '#!')
+          li.services__item
+            h3.services__name Презентации
+            p.services__text Вы даже не подозреваете, насколько вы изумительны!
+            +button('a', 'Заказать', '', '#!')
+    section.about-us
+      .container
+        h2.visually-hidden О нас
+        .about-us__description
+          p Мы — маленькая, но гордая дизайн-студия из Краснодара.
+          p Исповедуем принципы минимализма и чистоты. Ставим математический расчетпревыше креатива. Работаем не покладая рук, как роботы.
+          .list
+            p.list__heading Выполняем заказы на разработку:
+            ul.list__items
+              li.list__item Веб-сайтов любой сложности
+              li.list__item Мобильных приложений для iOS и Android
+              li.list__item Слайдшоу и видео для корпоративных презентаций
+        .about-us__statistics
+          picture
+            img(src='img/logo-alter.png' width='360' height='208' alt='Логотип в виде надписи nёrd\'s на фоне празднично разбросанных красных, синих, жёлтых, зелёных кругов и палочек.')
+            .statistics-list
+              p.statistics-list__heading с 2004 года любим точность во всем:
+              dl.statistics-list__items
+                .statistics-list__item
+                  dt.statistics-list__key Уровень самоотдачи
+                  dd.statistics-list__value 146%
+                .statistics-list__item
+                  dt.statistics-list__key Соблюдение сроков
+                  dd.statistics-list__value 100%
+                .statistics-list__item
+                  dt.statistics-list__key Минимальная предоплата
+                  dd.statistics-list__value 50%
+    section.clients
+      .container
+        h2.visually-hidden Наши клиенты
+        ul.clients__list
+          li.clients__item
+            picture
+              img(src='img/clients/client-1.svg' width='199' height='57' alt='Логотип HTML Academy.')
+          li.clients__item
+            picture
+              img(src='img/clients/client-2.png' width='209' height='90' alt='Логотип Barbershop BORODINSKI.')
+          li.clients__item
+            picture
+              img(src='img/clients/client-3.png' width='185' height='52' alt='Логотип PINK.')
+          li.clients__item
+            picture
+              img(src='img/clients/client-4.png' width='173' height='84' alt='Логотип MISHKA.')
+
+
+
+
