@@ -1,0 +1,19 @@
+.contacts-card {
+  font-size: 16px;
+  line-height: 18px;
+  color: $text-weak-color;
+  background-color: $background-color;
+}
+
+.contacts-card__heading {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $text-accent-color;
+}
+
+.contacts-card__link {
+  text-decoration: none;
+  color: inherit;
+}

@@ -3,7 +3,7 @@ const pathDest = './build';
 
 export default {
   root: pathDest,
-  
+
   pug: {
     src: pathSrc + '/pug/*.pug',
     watch: pathSrc + '/pug/**/*.pug',
@@ -36,15 +36,16 @@ export default {
 
   copy: {
     src: [
-      pathSrc + '/fonts/**/*.{woff2, woff}',
+      pathSrc + '/fonts/**/*.{woff,woff2}',
       pathSrc + '/*.ico',
       pathSrc + '/*.webmanifest'
     ],
     watch: [
-      pathSrc + '/fonts/**/*.{woff2, woff}',
+      pathSrc + '/fonts/**/*.{woff,woff2}',
       pathSrc + '/*.ico',
       pathSrc + '/*.webmanifest'
     ],
-    dest: pathDest
+    dest: pathDest,
+    base: pathSrc
   }
 };

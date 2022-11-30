@@ -1,0 +1,14 @@
+.heading {
+  font-weight: 500;
+  color: $text-accent-color;
+
+  &--size--l {
+    font-size: 45px;
+    line-height: 1;
+  }
+
+  &--size--xl {
+    font-size: 55px;
+    line-height: 1;
+  }
+}

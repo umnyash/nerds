@@ -1,0 +1,15 @@
+.page__body {
+  display: grid;
+  min-width: 1200px;
+  min-height: 100vh;
+  margin: 0;
+  grid-template-rows: auto 1fr auto;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  color: $text-color;
+  background-color: $background-color;
+}
+

@@ -9,11 +9,11 @@ mixin page-footer
         .contacts-card
           h3.contacts-card__heading Nёrds design studio
           p.contacts-card__item наб. Реки Карповки,#[br] 5 лит П, Санкт-Петербург
-          a.contacts-card__item(href='tel:+78005558628') +7 800 555-86-28
+          a.contacts-card__link(href='tel:+78005558628') +7 800 555-86-28
           +button('a', 'Напишите нам', '', '#!')(class='contacts-card__button')
     .page-footer__socials
       .container
         +socials(class='page-footer__socials')
-        .footer__socials-text-wrapper
-          p.footer__socials-slogan Давайте дружить, это выгодно!
-          p Скидка 10% для друзей из социальных сетей
+        .page-footer__socials-text-wrapper
+          p.page-footer__socials-slogan Давайте дружить, это выгодно!
+          p.page-footer__socials-text Скидка 10% для друзей из социальных сетей.

@@ -10,17 +10,17 @@ block content
           ul.slider__list
             li.slider__item
               section.banner
-                h3.banner__heading Долго, дорого, скрупулёзно
+                h3.banner__heading.heading.heading--size--xl Долго, дорого, скрупулёзно
                 p.banner__text Математически выверенный дизайн для вашего сайта или мобильного приложения.
                 +button('a', 'Узнать больше', '', '#!')
             li.slider__item
               section.banner
-                h3.banner__heading Любим математику как никто другой
+                h3.banner__heading.heading.heading--size--xl Любим математику как никто другой
                 p.banner__text Никакого креатива, только математические формулы для расчета идеальных пропорций.
                 +button('a', 'Узнать больше', '', '#!')
             li.slider__item
               section.banner
-                h3.banner__heading Только ночь, только хардкор
+                h3.banner__heading.heading.heading--size--xl Только ночь, только хардкор
                 p.banner__text Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.
                 +button('a', 'Узнать больше', '', '#!')
           ul.slider__slides-buttons
@@ -53,7 +53,7 @@ block content
       .container
         h2.visually-hidden О нас
         .about-us__description
-          p Мы — маленькая, но гордая дизайн-студия из Краснодара.
+          p.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
           p Исповедуем принципы минимализма и чистоты. Ставим математический расчетпревыше креатива. Работаем не покладая рук, как роботы.
           .list
             p.list__heading Выполняем заказы на разработку:
@@ -69,13 +69,13 @@ block content
               dl.statistics-list__items
                 .statistics-list__item
                   dt.statistics-list__key Уровень самоотдачи
-                  dd.statistics-list__value 146%
+                  dd.statistics-list__value 146#[span.statistics-list__value-measure %]
                 .statistics-list__item
                   dt.statistics-list__key Соблюдение сроков
-                  dd.statistics-list__value 100%
+                  dd.statistics-list__value 100#[span.statistics-list__value-measure %]
                 .statistics-list__item
                   dt.statistics-list__key Минимальная предоплата
-                  dd.statistics-list__value 50%
+                  dd.statistics-list__value 50#[span.statistics-list__value-measure %]
     section.clients
       .container
         h2.visually-hidden Наши клиенты

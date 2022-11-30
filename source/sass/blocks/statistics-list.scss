@@ -1,0 +1,17 @@
+.statistics-list__heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $text-accent-color;
+}
+
+.statistics-list__value {
+  font-size: 45px;
+  line-height: 1;
+  font-weight: 700;
+  color: $text-accent-color;
+}
+
+.statistics-list__value-measure {
+  vertical-align: top;
+  font-size: 26px;
+}
