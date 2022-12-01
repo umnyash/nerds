@@ -7,7 +7,7 @@ import app from '../config/app.js';
 // Плагины
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import svgstore from 'gulp-svgstore';
+import { stacksvg } from 'gulp-stacksvg';
 
 // Создание спрайта
 export default () => {
@@ -18,6 +18,6 @@ export default () => {
         message: error.message
       }))
     }))
-    .pipe(svgstore(app.svgstore))
+    .pipe(stacksvg(app.stacksvg))
     .pipe(gulp.dest(path.sprite.dest))
 };

@@ -21,7 +21,7 @@ export default {
     quality: 75
   },
 
-  svgstore: {
-    inlineSvg: true
+  stacksvg: {
+    output: 'icons'
   }
 };

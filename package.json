@@ -31,7 +31,7 @@
     "gulp-sass-glob": "1.1.0",
     "gulp-shorthand": "1.1.0",
     "gulp-size": "4.0.1",
-    "gulp-svgstore": "9.0.0",
+    "gulp-stacksvg": "^1.0.6",
     "gulp-webp": "4.0.1",
     "sass": "1.56.1",
     "webpack": "5.75.0",

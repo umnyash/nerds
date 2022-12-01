@@ -23,7 +23,7 @@ export default {
   },
 
   img: {
-    src: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
+    src: [pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}', '!' + pathSrc + '/img/icons/**/*'],
     watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
     dest: pathDest + '/img'
   },
