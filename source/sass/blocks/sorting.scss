@@ -1,4 +1,8 @@
 .sorting {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  column-gap: 25px;
+  align-items: center;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
@@ -6,53 +10,82 @@
 }
 
 .sorting__heading {
+  margin: 0 25px 0 0;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
 
+.sorting__parameter {
+  margin: 0;
+}
+
 .sorting__types {
+  display: flex;
   padding: 0;
+  margin: 0;
   list-style: none;
+  flex-wrap: wrap;
+}
+
+.sorting__type {
+  margin: 0 25px 0 0;
 }
 
 .sorting__link {
+  display: block;
   text-decoration: none;
   color: inherit;
   opacity: 0.3;
+  transition: opacity $duration;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     opacity: 0.6;
   }
 
-  &:active,
+  &:active {
+    opacity: 1;
+  }
+
+
   &--current {
     opacity: 1;
+    pointer-events: none;
   }
 }
 
-.sorting__direction {
+.sorting__directions {
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 18px;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
 .sorting__button {
-  display: inline-block;
+  display: block;
   width: 11px;
   height: 10px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 10'%3E%3Cpolygon points='0,0 11,0 5.5,10' fill='%23231f20'/%3E%3C/svg%3E");
   opacity: 0.3;
 
-  &--ascending {
+  &--up {
     transform: rotate(180deg);
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     opacity: 0.6;
   }
 
-  &:active,
+  &:active {
+    opacity: 1;
+  }
+
   &--current {
     opacity: 1;
+    pointer-events: none;
   }
 }

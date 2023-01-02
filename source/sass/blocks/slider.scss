@@ -1,4 +1,51 @@
+.slider {
+  position: relative;
+}
+
 .slider__list {
   padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+.slider__item {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
+
+.slider__slides-buttons {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  transform: translateX(-50%);
+}
+
+.slider__slide-button-wrapper {
+  margin: 6px 8px;
+}
+
+.slider__slide-button {
+  box-sizing: border-box;
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 5px solid $slider-slide-button-color;
+  border-radius: 50%;
+  background-color: $slider-slide-button-color;
+  cursor: pointer;
+  transition: box-shadow $duration;
+
+  &--current {
+    box-shadow: inset 0 0 0 2px #c1c1c1;
+    pointer-events: none;
+  }
 }

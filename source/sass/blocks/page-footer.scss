@@ -1,12 +1,29 @@
+.page-footer__socials {
+  padding: 68px 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.page-footer__socials-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 140px;
+  align-items: start;
+}
+
+.page-footer__socials-list {
+  max-width: 450px;
+  margin: 0 -10px -10px 0;
+}
+
 .page-footer__socials-slogan {
+  margin: 0 0 5px;
   font-size: 36px;
   line-height: 46px;
   font-weight: 700;
   color: $text-accent-color;
 }
 
-.page-footer__socials {
-  color: $text-weak-color;
-  font-size: 16px;
-  line-height: 22px;
+.page-footer__socials-text {
+  margin: 0;
 }

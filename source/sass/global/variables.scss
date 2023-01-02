@@ -1,3 +1,9 @@
+$retina: "(min-resolution: 2dppx)";
+
+$basic-font-family: "Roboto", "Arial", sans-serif;
+
+$duration: 100ms;
+
 $text-color: #283136;
 $text-alter-color: #ffffff;
 $text-accent-color: #000000;
@@ -5,7 +11,22 @@ $text-weak-color: #666666;
 $background-color: #ffffff;
 $background-alter-color: #eeeeee;
 $special-color-1: #fb565a;
-$pagination-link-background-color: #eeeeee;
-$pagination-link-hover-background-color: #dfdfdf;
-$pagination-link-active-background-color: #d5d5d5;
+$special-color-1-dark: #e74246;
+$special-color-1-darkest: #d7373b;
+$special-color-2: #00ca74;
+$special-color-2-dark: #00bc6c;
+$special-color-2-darkest: #00aa62;
+$special-color-3: #efc849;
+$special-color-3-dark: #eab534;
+$special-color-3-darkest: #e5a722;
+$special-color-4: #eeeeee;
+$special-color-4-dark: #dfdfdf;
+$special-color-4-darkest: #d5d5d5;
+// $pagination-link-background-color: #eeeeee;
+// $pagination-link-hover-background-color: #dfdfdf;
+// $pagination-link-active-background-color: #d5d5d5;
 $pagination-current-link-border-color: #dbdbdb;
+$slider-slide-button-color: #ffffff;
+$page-section-border-color: #eeeeee;
+$socials-item-background-color: #e1e1e1;
+$product-detail-background-color: #4d4d4d;

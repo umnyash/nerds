@@ -1,0 +1,22 @@
+.catalog__container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  column-gap: 140px;
+  align-items: start;
+}
+
+.catalog__filter {
+  grid-row: 1 / 4;
+}
+
+.catalog__sorting {
+  margin: 0 0 50px;
+}
+
+.catalog__products {
+  margin: 0;
+}
+
+.catalog__pagination {
+  margin: 55px 0 0;
+}

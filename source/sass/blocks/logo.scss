@@ -1,0 +1,12 @@
+.logo[href] {
+  transition: opacity $duration;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

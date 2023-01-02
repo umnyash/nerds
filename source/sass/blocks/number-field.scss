@@ -1,0 +1,28 @@
+.number-field {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  justify-content: start;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.number-field__label {
+  margin: 0 10px 0 0;
+}
+
+.number-field__control {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 9px;
+  border-radius: 3px;
+  text-align: center;
+  font: inherit;
+  background-color: $special-color-4;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}

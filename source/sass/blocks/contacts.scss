@@ -1,0 +1,20 @@
+.contacts {
+  display: grid;
+}
+
+.contacts__map {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.contacts__card-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+}
+
+.contacts__card {
+  box-sizing: border-box;
+  max-width: 320px;
+  padding: 50px;
+  margin: 50px 0;
+}

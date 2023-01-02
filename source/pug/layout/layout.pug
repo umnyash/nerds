@@ -1,14 +1,17 @@
+block variables
+
 doctype html
 html.page(lang='ru')
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
+    title= title
     link(rel='stylesheet' href='css/style.min.css')
     meta(name='description' content='Разработка веб-сайтов, мобильных приложений, слайдшоу и видео для презентаций.')
     meta(name='keywords' content='Nёrds, разработка, веб-сайт, мобильное приложение, слайдшоу, презентация, видео')
   body.page__body
     include ../components/components
-    +page-header
+    +page-header(class='page__header')
     block content
     +page-footer
 

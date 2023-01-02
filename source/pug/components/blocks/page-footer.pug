@@ -1,19 +1,20 @@
 mixin page-footer
   footer.page-footer&attributes(attributes)
-    section.contacts
+    section.contacts(id='contacts')
       h2.visually-hidden Контакты
-      .map
+      .contacts__map.map
         picture.map__image-wrapper
-          img.map__image(src='img/location.png' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')
-      .container
-        .contacts-card
+          source(type='image/webp' srcset='img/location.webp, img/location@2x.webp 2x')
+          img.map__image(src='img/location.png' srcset='img/location@2x.png' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')
+      .contacts__card-wrapper.container
+        .contacts__card.contacts-card
           h3.contacts-card__heading Nёrds design studio
           p.contacts-card__item наб. Реки Карповки,#[br] 5 лит П, Санкт-Петербург
-          a.contacts-card__link(href='tel:+78005558628') +7 800 555-86-28
+          a.contacts-card__item.contacts-card__item--link(href='tel:+78005558628') +7 800 555-86-28
           +button('a', 'Напишите нам', '', '#!')(class='contacts-card__button')
     .page-footer__socials
-      .container
-        +socials(class='page-footer__socials')
+      .page-footer__socials-container.container
+        +socials(class='page-footer__socials-list')
         .page-footer__socials-text-wrapper
           p.page-footer__socials-slogan Давайте дружить, это выгодно!
           p.page-footer__socials-text Скидка 10% для друзей из социальных сетей.

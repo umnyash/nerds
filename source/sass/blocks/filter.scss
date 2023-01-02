@@ -4,10 +4,14 @@
 }
 
 .filter__section {
+  padding: 0;
+  margin: 0 0 50px;
   border: none;
 }
 
 .filter__section-heading {
+  padding: 0;
+  margin: 0 0 16px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -15,7 +19,32 @@
   color: $text-accent-color;
 }
 
+.filter__range  {
+  margin: 34px 0 14px;
+}
+
 .filter__options {
+  display: grid;
   padding: 0;
+  margin: 0;
   list-style: none;
+  row-gap: 10px;
+}
+
+.filter__section--range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+
+  .filter__section-heading {
+    grid-column: 1 / -1;
+  }
+
+  .filter__range {
+    grid-column: 1 / -1;
+  }
+}
+
+.filter__button {
+  width: 100%;
 }

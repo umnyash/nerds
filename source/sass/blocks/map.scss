@@ -1,0 +1,13 @@
+.map__image-wrapper {
+  display: block;
+  width: 100%;
+  height: 416px;
+}
+
+.map__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

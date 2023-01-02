@@ -1,98 +1,109 @@
 extends layout/layout
 
+block variables
+  - var title = 'Главная страница'
+  - var pageClass = 'index-page'
+
 block content
-  main
+  main.index-page
     h1.visually-hidden Дизайн-студия "Nёrds"
     section.features
       .container
         h2.visually-hidden Особенности нашей студии
         .features__slider.slider
           ul.slider__list
+            li.slider__item.slider__item--current
+              section.feature.feature--1
+                .feature__inner
+                  h3.feature__heading.heading.heading--size--xl Долго, дорого, скрупулёзно
+                  p.feature__text Математически выверенный дизайн#[br] для вашего сайта или мобильного приложения.
+                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
             li.slider__item
-              section.banner
-                h3.banner__heading.heading.heading--size--xl Долго, дорого, скрупулёзно
-                p.banner__text Математически выверенный дизайн для вашего сайта или мобильного приложения.
-                +button('a', 'Узнать больше', '', '#!')
+              section.feature.feature--2
+                .feature__inner
+                  h3.feature__heading.heading.heading--size--xl Любим математику как никто другой
+                  p.feature__text Никакого креатива, только математические формулы для расчета идеальных пропорций.
+                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
             li.slider__item
-              section.banner
-                h3.banner__heading.heading.heading--size--xl Любим математику как никто другой
-                p.banner__text Никакого креатива, только математические формулы для расчета идеальных пропорций.
-                +button('a', 'Узнать больше', '', '#!')
-            li.slider__item
-              section.banner
-                h3.banner__heading.heading.heading--size--xl Только ночь, только хардкор
-                p.banner__text Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.
-                +button('a', 'Узнать больше', '', '#!')
+              section.feature.feature--3
+                .feature__inner
+                  h3.feature__heading.heading.heading--size--xl Только ночь, только хардкор
+                  p.feature__text Работать днем, как все? Мы против этого.#[br] Ближе к полуночи работа только начинается.
+                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
           ul.slider__slides-buttons
             li.slider__slide-button-wrapper
-              button.slide-button(type='button')
+              button.slider__slide-button.slider__slide-button--current(type='button')
                 span.visually-hidden Показать слайд № 1
             li.slider__slide-button-wrapper
-              button.slide-button(type='button')
+              button.slider__slide-button(type='button')
                 span.visually-hidden Показать слайд № 2
             li.slider__slide-button-wrapper
-              button.slide-button(type='button')
+              button.slider__slide-button(type='button')
                 span.visually-hidden Показать слайд № 3
     section.services
       .container
         h2.visually-hidden Услуги
         ul.services__list
-          li.services__item
+          li.services__item.services__item--web-sites
             h3.services__name Веб-сайты
             p.services__text Мир никогда не будет прежним после того как увидит ваш сайт!
-            +button('a', 'Заказать', '', '#!')
-          li.services__item
+            +button('a', 'Заказать', '', '#!')(class='services__button')
+          li.services__item.services__item--apps
             h3.services__name Приложения
-            p.services__text Покорите топ-10 приложений в AppStore и Google Play
-            +button('a', 'Заказать', '', '#!')
-          li.services__item
+            p.services__text Покорите топ-10 приложений в&nbsp;AppStore и Google Play
+            +button('a', 'Заказать', '', '#!')(class='button--theme--2 services__button')
+          li.services__item.services__item--presentations
             h3.services__name Презентации
             p.services__text Вы даже не подозреваете, насколько вы изумительны!
-            +button('a', 'Заказать', '', '#!')
-    section.about-us
-      .container
+            +button('a', 'Заказать', '', '#!')(class='button--theme--3 services__button')
+    section.page__section.page__section--border-top.about-us
+      .about-us__container.container
         h2.visually-hidden О нас
         .about-us__description
-          p.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
-          p Исповедуем принципы минимализма и чистоты. Ставим математический расчетпревыше креатива. Работаем не покладая рук, как роботы.
-          .list
+          p.about-us__lead.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
+          p.about-us__text Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива. Работаем не покладая рук, как роботы.
+          .about-us__list.list
             p.list__heading Выполняем заказы на разработку:
             ul.list__items
               li.list__item Веб-сайтов любой сложности
               li.list__item Мобильных приложений для iOS и Android
               li.list__item Слайдшоу и видео для корпоративных презентаций
         .about-us__statistics
-          picture
-            img(src='img/logo-alter.png' width='360' height='208' alt='Логотип в виде надписи nёrd\'s на фоне празднично разбросанных красных, синих, жёлтых, зелёных кругов и палочек.')
-            .statistics-list
-              p.statistics-list__heading с 2004 года любим точность во всем:
-              dl.statistics-list__items
-                .statistics-list__item
-                  dt.statistics-list__key Уровень самоотдачи
-                  dd.statistics-list__value 146#[span.statistics-list__value-measure %]
-                .statistics-list__item
-                  dt.statistics-list__key Соблюдение сроков
-                  dd.statistics-list__value 100#[span.statistics-list__value-measure %]
-                .statistics-list__item
-                  dt.statistics-list__key Минимальная предоплата
-                  dd.statistics-list__value 50#[span.statistics-list__value-measure %]
-    section.clients
+          picture.logo-alter
+            source(type='image/webp' srcset='img/logo-alter.webp, img/logo-alter@2x.webp 2x')
+            img.logo-alter__image(src='img/logo-alter.png' srcset="img/logo-alter@2x.png" width='360' height='208' alt='Логотип в виде надписи nёrd\'s на фоне празднично разбросанных красных, синих, жёлтых, зелёных кругов и палочек.')
+          .statistics-list
+            p.statistics-list__heading с 2004 года любим точность во всем:
+            dl.statistics-list__items
+              .statistics-list__item
+                dt.statistics-list__key Уровень самоотдачи
+                dd.statistics-list__value 146#[span.statistics-list__value-measure %]
+              .statistics-list__item
+                dt.statistics-list__key Соблюдение сроков
+                dd.statistics-list__value 100#[span.statistics-list__value-measure %]
+              .statistics-list__item
+                dt.statistics-list__key Минимальная предоплата
+                dd.statistics-list__value 50#[span.statistics-list__value-measure %]
+    section.page__section.page__section--border-top.page__section--border-bottom.clients
       .container
         h2.visually-hidden Наши клиенты
         ul.clients__list
           li.clients__item
-            picture
-              img(src='img/clients/client-1.svg' width='199' height='57' alt='Логотип HTML Academy.')
+            a.clients__link(href='#!')
+              picture.clients__image-wrapper
+                img.clients__image(src='img/clients/html-academy-logo.svg' width='199' height='57' alt='Логотип HTML Academy.')
           li.clients__item
-            picture
-              img(src='img/clients/client-2.png' width='209' height='90' alt='Логотип Barbershop BORODINSKI.')
+            a.clients__link(href='#!')
+              picture.clients__image-wrapper
+                source(type='image/webp' srcset='img/clients/borodinski-logo.webp, img/clients/borodinski-logo@2x.webp 2x')
+                img.clients__image(src='img/clients/borodinski-logo.png' srcset='img/clients/borodinski-logo@2x.png 2x' width='209' height='90' alt='Логотип Barbershop BORODINSKI.')
           li.clients__item
-            picture
-              img(src='img/clients/client-3.png' width='185' height='52' alt='Логотип PINK.')
+            a.clients__link(href='#!')
+              picture.clients__image-wrapper
+                source(type='image/webp' srcset='img/clients/pink-logo.webp, img/clients/pink-logo@2x.webp 2x')
+                img.clients__image(src='img/clients/pink-logo.png' srcset='img/clients/pink-logo@2x.png 2x' width='185' height='52' alt='Логотип PINK.')
           li.clients__item
-            picture
-              img(src='img/clients/client-4.png' width='173' height='84' alt='Логотип MISHKA.')
-
-
-
-
+            a.clients__link(href='#!')
+              picture.clients__image-wrapper
+                source(type='image/webp' srcset='img/clients/mishka-logo.webp, img/clients/mishka-logo@2x.webp 2x')
+                img.clients__image(src='img/clients/mishka-logo.png' srcset='img/clients/mishka-logo@2x.png 2x' width='173' height='84' alt='Логотип MISHKA.')

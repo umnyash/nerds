@@ -31,7 +31,6 @@ export default () => {
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(shorthand())
     .pipe(groupCssMediaQueries())
     .pipe(size({ title: 'main.css' }))
     .pipe(gulp.dest(path.scss.dest, { sourcemaps: app.isDev }))

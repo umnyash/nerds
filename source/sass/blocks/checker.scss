@@ -1,0 +1,49 @@
+.checker {
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.checker__control {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  background-image: url("../img/icons.svg#radio-off");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 50%;
+  appearance: none;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity, $duration;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+  }
+}
+
+.checker__control:disabled + .radiobutton__label {
+  opacity: 0.3;
+}
+
+.checker__control[type="radio"] {
+  background-image: url("../img/icons.svg#radio-off");
+}
+
+.checker__control[type="radio"]:checked {
+  background-image: url("../img/icons.svg#radio-on");
+}
+
+.checker__control[type="checkbox"] {
+  background-image: url("../img/icons.svg#checkbox-off");
+}
+
+.checker__control[type="checkbox"]:checked {
+  background-image: url("../img/icons.svg#checkbox-on");
+}

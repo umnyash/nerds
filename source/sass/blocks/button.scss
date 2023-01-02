@@ -1,7 +1,10 @@
 .button {
+  display: inline-block;
   box-sizing: border-box;
   padding: 16px 20px 15px;
   border: none;
+  text-align: center;
+  font-family: $basic-font-family;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
@@ -10,13 +13,75 @@
   color: $text-alter-color;
   background-color: $special-color-1;
   border-radius: 3px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: $duration;
 
-  &:hover {
-    background-color: #e74246;
+  &:hover,
+  &:focus-visible {
+    background-color: $special-color-1-dark;
   }
 
   &:active {
-    background-color: #d7373b;
+    background-color: $special-color-1-darkest;
     box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  }
+}
+
+.button--theme--2 {
+  background-color: $special-color-2;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $special-color-2-dark;
+  }
+
+  &:active {
+    background-color: $special-color-2-darkest;
+  }
+}
+
+.button--theme--3 {
+  background-color: $special-color-3;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $special-color-3-dark;
+  }
+
+  &:active {
+    background-color: $special-color-3-darkest;
+  }
+}
+
+.button--theme--4 {
+  color: $text-accent-color;
+  background-color: $special-color-4;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $special-color-4-dark;
+  }
+
+  &:active {
+    background-color: $special-color-4-darkest;
+  }
+}
+
+.button--current {
+  padding: 13px 17px 12px;
+  border: 3px solid $special-color-1;
+  background-color: transparent;
+  pointer-events: none;
+
+  &.button--theme--2 {
+    border-color: $special-color-2;
+  }
+
+  &.button--theme--3 {
+    border-color: $special-color-3;
+  }
+
+  &.button--theme--4 {
+    border-color: $special-color-4;
   }
 }
