@@ -3,16 +3,21 @@
 }
 
 .slider__list {
+  display: grid;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .slider__item {
-  display: none;
+  grid-area: 1 / 1 / 2 / 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 500ms;
 
   &--current {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }
 

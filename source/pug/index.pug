@@ -32,13 +32,13 @@ block content
                   +button('a', 'Узнать больше', '', '#!')(class='feature__button')
           ul.slider__slides-buttons
             li.slider__slide-button-wrapper
-              button.slider__slide-button.slider__slide-button--current(type='button')
+              button.slider__slide-button.slider__slide-button--current(data-number='0' type='button')
                 span.visually-hidden Показать слайд № 1
             li.slider__slide-button-wrapper
-              button.slider__slide-button(type='button')
+              button.slider__slide-button(data-number='1' type='button')
                 span.visually-hidden Показать слайд № 2
             li.slider__slide-button-wrapper
-              button.slider__slide-button(type='button')
+              button.slider__slide-button(data-number='2' type='button')
                 span.visually-hidden Показать слайд № 3
     section.services
       .container
