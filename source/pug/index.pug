@@ -107,3 +107,22 @@ block content
               picture.clients__image-wrapper
                 source(type='image/webp' srcset='img/clients/mishka-logo.webp, img/clients/mishka-logo@2x.webp 2x')
                 img.clients__image(src='img/clients/mishka-logo.png' srcset='img/clients/mishka-logo@2x.png 2x' width='173' height='84' alt='Логотип MISHKA.')
+    .modal
+      .modal__inner
+        .modal__content
+          button.modal__close(type='button')
+            span.visually-hidden Закрыть
+          section.modal__letter.letter
+            .letter__inner
+              h2.letter__heading Напишите нам
+              form.letter__form(action='https://echo.htmlacademy.ru/courses' method='post')
+                label.text-field
+                  span.text-field__label Ваше имя:
+                  input.text-field__control(type='text' name="name" placeholder='Имя Фамилия')
+                label.text-field
+                  span.text-field__label Ваш email:
+                  input.text-field__control(type='email' name="email" placeholder='email@example.com')
+                label.letter__text.text-area
+                  span.text-area__label Текст письма
+                  textarea.text-area__control(name='text' placeholder='В свободной форме')
+                +button('button', 'Отправить', 'submit')(class='letter__submit')

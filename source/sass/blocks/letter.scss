@@ -1,0 +1,29 @@
+.letter {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.letter__heading {
+  margin: 0 0 36px;
+  font-size: 45px;
+  line-height: 53px;
+  font-weight: 700;
+  color: $text-accent-color;
+}
+
+.letter__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 40px;
+}
+
+.letter__text {
+  grid-column: 1 / -1;
+}
+
+.letter__submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-width: 260px;
+  margin: 12px 0 0;
+}

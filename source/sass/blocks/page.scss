@@ -11,6 +11,11 @@
   font-style: normal;
   color: $text-color;
   background-color: $background-color;
+
+  &--no-scroll {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .page__header {

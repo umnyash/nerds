@@ -1,0 +1,38 @@
+.text-area {
+  display: grid;
+  row-gap: 9px;
+}
+
+.text-area__label {
+  justify-self: start;
+  font-weight: 700;
+  color: $text-accent-color;
+}
+
+.text-area__control {
+  box-sizing: border-box;
+  height: 118px;
+  resize: none;
+  padding: 14px;
+  border: 2px solid $field-border-color;
+  border-radius: 3px;
+  font: inherit;
+  color: $field-text-color;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    border-color: $field-border-hover-color;
+  }
+
+  &:focus {
+    border-color: $field-border-focus-color;
+  }
+}
+
+.text-area--error .text-area__control {
+  border-color: $error-color;
+  color: $error-color
+}

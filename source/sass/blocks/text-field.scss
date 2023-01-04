@@ -1,0 +1,35 @@
+.text-field {
+  display: grid;
+  row-gap: 9px;
+}
+
+.text-field__label {
+  justify-self: start;
+  font-weight: 700;
+  color: $text-accent-color;
+}
+
+.text-field__control {
+  padding: 14px;
+  border: 2px solid $field-border-color;
+  border-radius: 3px;
+  font: inherit;
+  color: $field-text-color;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    border-color: $field-border-hover-color;
+  }
+
+  &:focus {
+    border-color: $field-border-focus-color;
+  }
+}
+
+.text-field--error .text-field__control {
+  border-color: $error-color;
+  color: $error-color
+}
