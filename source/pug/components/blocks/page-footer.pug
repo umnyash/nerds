@@ -11,11 +11,32 @@ mixin page-footer
           h3.contacts-card__heading Nёrds design studio
           p.contacts-card__item наб. Реки Карповки,#[br] 5 лит П, Санкт-Петербург
           a.contacts-card__item.contacts-card__item--link(href='tel:+78005558628') +7 800 555-86-28
-          +button('a', 'Напишите нам', '', '#!')(class='contacts-card__button')
+          +button('a', 'Напишите нам', '', '#contacts-letter')(class='contacts-card__button' data-modal-open="letter")
+      section.letter(id='contacts-letter' data-modal-content='letter')
+        .container
+          h2.letter__heading Напишите нам
+          form.letter__form(action='https://echo.htmlacademy.ru/courses' method='post')
+            label.text-field
+              span.text-field__label Ваше имя:
+              input.text-field__control(type='text' name="name" placeholder='Имя Фамилия')
+            label.text-field
+              span.text-field__label Ваш email:
+              input.text-field__control(type='email' name="email" placeholder='email@example.com')
+            label.letter__text.text-area
+              span.text-area__label Текст письма
+              textarea.text-area__control(name='text' placeholder='В свободной форме')
+            +button('button', 'Отправить', 'submit')(class='letter__submit')
     .page-footer__socials
       .page-footer__socials-container.container
         +socials(class='page-footer__socials-list')
         .page-footer__socials-text-wrapper
           p.page-footer__socials-slogan Давайте дружить, это выгодно!
           p.page-footer__socials-text Скидка 10% для друзей из социальных сетей.
+  .modal
+    span.modal__focus-stop(aria-hidden='true' tabindex='0')
+    .modal__inner
+      button.modal__close(type='button')
+        span.visually-hidden Закрыть
+      .modal__content
+    span.modal__focus-stop(aria-hidden='true' tabindex='0')
   script(src='js/main.js' type='module')

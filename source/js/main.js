@@ -1,6 +1,10 @@
-import { initSliders } from './slider.js';
-import { openModal } from './modal.js';
-import { initContactsCardButton } from './contacts-card.js';
+import { initSlider } from './slider.js';
+import { initModal } from './modal.js';
 
-initSliders();
-initContactsCardButton(openModal);
+const modal = document.querySelector('.modal');
+if (modal) {
+  const setModal = initModal(modal);
+  document.querySelectorAll('[data-modal-content]').forEach(setModal);
+}
+
+document.querySelectorAll('.slider').forEach(initSlider);

@@ -22,12 +22,4 @@ const initSlider = (slider) => {
   });
 };
 
-const initSliders = () => {
-  const sliders = document.querySelectorAll('.slider');
-  if (!sliders) {
-    return
-  }
-  sliders.forEach((slider) => initSlider(slider))
-};
-
-export { initSliders };
+export { initSlider };
