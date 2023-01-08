@@ -32,6 +32,11 @@ html {
   margin: 0 auto;
 }
 
+.modal .container {
+  width: auto;
+  margin: 0;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -334,6 +339,7 @@ html {
 
 .contacts {
   display: grid;
+  row-gap: 60px;
 }
 
 .contacts__map {
@@ -604,6 +610,10 @@ html {
   display: grid;
 }
 
+.modal__focus-stop {
+  position: absolute;
+}
+
 .modal__inner {
   padding: 64px 100px 84px;
   margin: 10px;
@@ -617,8 +627,9 @@ html {
 
 .modal__close {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  z-index: 2;
+  top: 56px;
+  right: 92px;
   width: 40px;
   height: 40px;
   padding: 0;
