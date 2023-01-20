@@ -1,4 +1,31 @@
 .range {
-  height: 80px;
-  background-color: $special-color-4;
+  --button-min-position: 0%;
+  --button-max-position: 100%;
+  position: relative;
+  background-image: linear-gradient(to right, $range-scale-basic-color var(--button-min-position), $range-scale-fill-color var(--button-min-position), $range-scale-fill-color var(--button-max-position), $range-scale-basic-color var(--button-max-position));
+  background-size: 100% 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.range__button {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 8px solid $background-color;
+  border-radius: 50%;
+  background-color: $range-button-background-color;
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
+  transform: translateX(-50%);
+  cursor: grab;
+
+  &:hover,
+  &:focus-visible,
+  &--active {
+    border-color: $range-scale-fill-color;
+    background-color: $background-color;
+  }
 }

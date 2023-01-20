@@ -19,8 +19,8 @@
   color: $text-accent-color;
 }
 
-.filter__range  {
-  margin: 34px 0 14px;
+.filter__number-range  {
+  margin: 34px 0 0;
 }
 
 .filter__options {
@@ -29,20 +29,6 @@
   margin: 0;
   list-style: none;
   row-gap: 10px;
-}
-
-.filter__section--range {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 30px;
-
-  .filter__section-heading {
-    grid-column: 1 / -1;
-  }
-
-  .filter__range {
-    grid-column: 1 / -1;
-  }
 }
 
 .filter__button {
