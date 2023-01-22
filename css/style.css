@@ -440,8 +440,8 @@ html {
   color: #000000;
 }
 
-.filter__range {
-  margin: 34px 0 14px;
+.filter__number-range {
+  margin: 34px 0 0;
 }
 
 .filter__options {
@@ -450,20 +450,6 @@ html {
   margin: 0;
   list-style: none;
   row-gap: 10px;
-}
-
-.filter__section--range {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 30px;
-}
-
-.filter__section--range .filter__section-heading {
-  grid-column: 1/-1;
-}
-
-.filter__section--range .filter__range {
-  grid-column: 1/-1;
 }
 
 .filter__button {
@@ -684,6 +670,23 @@ html {
 .number-field__control::-webkit-inner-spin-button {
   -webkit-appearance: none;
   appearance: none;
+}
+
+.number-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+}
+
+.number-range__range-wrapper {
+  grid-column: 1/-1;
+  padding: 30px;
+  background-color: #eeeeee;
+}
+
+.number-range__range {
+  width: 100%;
+  height: 20px;
 }
 
 .page-footer__socials {
@@ -943,8 +946,35 @@ html {
 }
 
 .range {
-  height: 80px;
-  background-color: #eeeeee;
+  --button-min-position: 0%;
+  --button-max-position: 100%;
+  position: relative;
+  background-image: linear-gradient(to right, #d7dcdf var(--button-min-position), #00ca74 var(--button-min-position), #00ca74 var(--button-max-position), #d7dcdf var(--button-max-position));
+  background-size: 100% 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.range__button {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  background-color: #ababab;
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
+  transform: translateX(-50%);
+  cursor: grab;
+}
+
+.range__button:hover,
+.range__button:focus-visible,
+.range__button--active {
+  border-color: #00ca74;
+  background-color: #ffffff;
 }
 
 .services__list {
