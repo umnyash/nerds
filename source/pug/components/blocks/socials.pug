@@ -1,11 +1,10 @@
+mixin socials__item(name, text, link)
+  li.socials__item
+    a.socials__link(class= `socials__link--${name}` href= link)
+      span.visually-hidden= name
+
 mixin socials
   ul.socials&attributes(attributes)
-    li.socials__item
-      a.socials__link.socials__link--vk(href='#!')
-        span.visually-hidden Вконтакте
-    li.socials__item
-      a.socials__link.socials__link--facebook(href='#!')
-        span.visually-hidden Facebook
-    li.socials__item
-      a.socials__link.socials__link--instagram(href='#!')
-        span.visually-hidden Instagram
+    +socials__item('vk', 'Вконтакте', '#!')
+    +socials__item('facebook', 'Facebook', '#!')
+    +socials__item('instagram', 'Instagram', '#!')
