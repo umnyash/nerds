@@ -30,15 +30,15 @@ block content
             ul.filter__options
               li.filter__option
                 label.checker
-                  input.checker__control(type='radio' name='grid' checked)
+                  input.checker__control(type='radio' name='grid' value="adaptive" checked)
                   span.checker__label Адаптивная
               li.filter__option
                 label.checker
-                  input.checker__control(type='radio' name='grid')
+                  input.checker__control(type='radio' name='grid' value="fixed")
                   span.checker__label Фиксированная
               li.filter__option
                 label.checker
-                  input.checker__control(type='radio' name='grid')
+                  input.checker__control(type='radio' name='grid' value="rubber")
                   span.checker__label Резиновая
           fieldset.filter__section
             legend.filter__section-heading Особенности:
