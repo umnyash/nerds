@@ -67,61 +67,7 @@ block content
               li.sorting__direction
                 a.sorting__button.sorting__button--up(href='#!')
                   span.visually-hidden По возрастанию
-        ul.catalog__products.products
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-1.webp, img/products/product-1@2x.webp 2x')
-              img.product__img(src='img/products/product-1.png' srcset='img/products/product-1@2x.png 2x' width='358' height='578' alt='Макет сайта для небольшого туристического городка Седоны.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') Sedona
-              p.product__text Информационный сайт для&nbsp;туристов
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-2.webp, img/products/product-2@2x.webp 2x')
-              img.product__img(src='img/products/product-2.png' srcset='img/products/product-2@2x.png 2x' width='358' height='578' alt='Макет сайта для мобильного приложения PINK.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') Pink App
-              p.product__text Продуктовый лендинг приложения для iOS и Android
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-3.webp, img/products/product-3@2x.webp 2x')
-              img.product__img(src='img/products/product-3.png' srcset='img/products/product-3@2x.png 2x' width='358' height='578' alt='Макет сайта для барбершопа BORODINSKI.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') Barbershop
-              p.product__text Сайт салона красоты.#[br] Для мужчин, да.
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-4.webp, img/products/product-4@2x.webp 2x')
-              img.product__img(src='img/products/product-4.png' srcset='img/products/product-4@2x.png 2x' width='358' height='578' alt='Макет сайта-магазина милых ручных изделий MISHKA.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') Mishka
-              p.product__text Интернет-магазин#[br] вязаных игрушек
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-5.webp, img/products/product-5@2x.webp 2x')
-              img.product__img(src='img/products/product-5.png' srcset='img/products/product-5@2x.png 2x' width='358' height='578' alt='Макет сайта для учебного заведения.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') A plus
-              p.product__text Лендинг курсов повышения квалификации
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
-          li.products__item.product
-            picture.product__img-wrapper
-              source(type='image/webp' srcset='img/products/product-6.webp, img/products/product-6@2x.webp 2x')
-              img.product__img(src='img/products/product-6.png' srcset='img/products/product-6@2x.png 2x' width='358' height='578' alt='Макет сайта-магазин крафтового квасас КВАСТ.')
-            .product__info
-              h3.product__heading
-                a.product__link(href='#!') Кваст
-              p.product__text Промо-сайт производителя крафтового кваса
-              +button('a', '9 900 ₽', '', '#!')(class='product__button')
+        +products(class='catalog__products')
         .catalog__pagination.pagination
           ul.pagination__list
             li.pagination__item

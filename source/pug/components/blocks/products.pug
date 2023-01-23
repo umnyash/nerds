@@ -1,0 +1,6 @@
+include ../../../data/products-data
+
+mixin products
+  ul.products&attributes(attributes)
+    each product in products
+      +product(product)

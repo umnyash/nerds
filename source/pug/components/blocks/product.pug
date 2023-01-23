@@ -1,0 +1,10 @@
+mixin product(product)
+  li.product&attributes(attributes)
+    .product__info
+      h3.product__heading
+        a.product__link(href= product.link)= product.name
+      p.product__text!= product.description
+      +button('a', `${product.price} ₽`, '', '#!')(class='product__button')
+    picture.product__img-wrapper
+      source(type='image/webp' srcset=`img/products/${product.imageWebp}, img/products/${product.imageWebp2x} 2x`)
+      img.product__img(src=`img/products/${product.image}` srcset=`img/products/${product.image2x} 2x` width='358' height='578' alt=product.imageDescription)
