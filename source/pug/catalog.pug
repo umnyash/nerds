@@ -11,44 +11,7 @@ block content
         h1.main-header__heading.heading.heading--size--xl Магазин готовых шаблонов
     section.catalog
       .catalog__container.container
-        form.catalog__filter.filter(action='https://echo.htmlacademy.ru/courses' method='get')
-          fieldset.filter__section
-            legend.filter__section-heading Стоимость:
-            .filter__number-range.number-range
-              .number-range__range-wrapper(aria-hidden='true')
-                .number-range__range.range
-                  button.range__button(type='button' data-type='min' style='left:0%')
-                  button.range__button(type='button' data-type='max' style='left:75%')
-              label.number-range__min.number-field
-                span.number-field__label От
-                input.number-field__control(type='number' name="min-price" data-type="min" value="0" min='0' max='200000' step='1')
-              label.number-range__max.number-field
-                span.number-field__label До
-                input.number-field__control(type='number' name="max-price" data-type="max" value="150000" min='0' max='200000' step='1')
-          fieldset.filter__section
-            legend.filter__section-heading Сетка:
-            ul.filter__options
-              li.filter__option
-                +checker('grid', 'radio', 'adaptive', 'Адаптивная', true)
-              li.filter__option
-                +checker('grid', 'radio', 'fixed', 'Фиксированная')
-              li.filter__option
-                +checker('grid', 'radio', 'rubber', 'Резиновая')
-          fieldset.filter__section
-            legend.filter__section-heading Особенности:
-            ul.filter__options
-              li.filter__option
-                +checker('features', 'checkbox', 'slider', 'Слайдер', true)
-              li.filter__option
-                +checker('features', 'checkbox', 'advantages', 'Блок преимуществ')
-              li.filter__option
-                +checker('features', 'checkbox', 'news', 'Новости', true)
-              li.filter__option
-                +checker('features', 'checkbox', 'gallery', 'Галерея')
-              li.filter__option
-                +checker('features', 'checkbox', 'cart', 'Корзина')
-          .filter__controls
-            +button('button', 'Показать', 'submit')(class='button--theme--4 filter__button')
+        +filter('https://echo.htmlacademy.ru/courses', 'get')(class='catalog__filter')
         dl.catalog__sorting.sorting
           dt.sorting__heading Сортировать:
           dd.sorting__parameter
