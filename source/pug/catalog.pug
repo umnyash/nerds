@@ -29,40 +29,24 @@ block content
             legend.filter__section-heading Сетка:
             ul.filter__options
               li.filter__option
-                label.checker
-                  input.checker__control(type='radio' name='grid' value="adaptive" checked)
-                  span.checker__label Адаптивная
+                +checker('grid', 'radio', 'adaptive', 'Адаптивная', true)
               li.filter__option
-                label.checker
-                  input.checker__control(type='radio' name='grid' value="fixed")
-                  span.checker__label Фиксированная
+                +checker('grid', 'radio', 'fixed', 'Фиксированная')
               li.filter__option
-                label.checker
-                  input.checker__control(type='radio' name='grid' value="rubber")
-                  span.checker__label Резиновая
+                +checker('grid', 'radio', 'rubber', 'Резиновая')
           fieldset.filter__section
             legend.filter__section-heading Особенности:
             ul.filter__options
               li.filter__option
-                label.checker
-                  input.checker__control(type='checkbox' name="features" value='slider' checked)
-                  span.checker__label Слайдер
+                +checker('features', 'checkbox', 'slider', 'Слайдер', true)
               li.filter__option
-                label.checker
-                  input.checker__control(type='checkbox' name="features" value='advantages')
-                  span.checker__label Блок преимуществ
+                +checker('features', 'checkbox', 'advantages', 'Блок преимуществ')
               li.filter__option
-                label.checker
-                  input.checker__control(type='checkbox' name="features" value='news' checked)
-                  span.checker__label Новости
+                +checker('features', 'checkbox', 'news', 'Новости', true)
               li.filter__option
-                label.checker
-                  input.checker__control(type='checkbox' name="features" value='gallery')
-                  span.checker__label Галерея
+                +checker('features', 'checkbox', 'gallery', 'Галерея')
               li.filter__option
-                label.checker
-                  input.checker__control(type='checkbox' name="features" value='cart')
-                  span.checker__label Корзина
+                +checker('features', 'checkbox', 'cart', 'Корзина')
           .filter__controls
             +button('button', 'Показать', 'submit')(class='button--theme--4 filter__button')
         dl.catalog__sorting.sorting
