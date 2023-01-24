@@ -84,26 +84,4 @@ block content
               .statistics-list__item
                 dt.statistics-list__key Минимальная предоплата
                 dd.statistics-list__value 50#[span.statistics-list__value-measure %]
-    section.page__section.page__section--border-top.page__section--border-bottom.clients
-      .container
-        h2.visually-hidden Наши клиенты
-        ul.clients__list
-          li.clients__item
-            a.clients__link(href='#!')
-              picture.clients__image-wrapper
-                img.clients__image(src='img/clients/html-academy-logo.svg' width='199' height='57' alt='Логотип HTML Academy.')
-          li.clients__item
-            a.clients__link(href='#!')
-              picture.clients__image-wrapper
-                source(type='image/webp' srcset='img/clients/borodinski-logo.webp, img/clients/borodinski-logo@2x.webp 2x')
-                img.clients__image(src='img/clients/borodinski-logo.png' srcset='img/clients/borodinski-logo@2x.png 2x' width='209' height='90' alt='Логотип Barbershop BORODINSKI.')
-          li.clients__item
-            a.clients__link(href='#!')
-              picture.clients__image-wrapper
-                source(type='image/webp' srcset='img/clients/pink-logo.webp, img/clients/pink-logo@2x.webp 2x')
-                img.clients__image(src='img/clients/pink-logo.png' srcset='img/clients/pink-logo@2x.png 2x' width='185' height='52' alt='Логотип PINK.')
-          li.clients__item
-            a.clients__link(href='#!')
-              picture.clients__image-wrapper
-                source(type='image/webp' srcset='img/clients/mishka-logo.webp, img/clients/mishka-logo@2x.webp 2x')
-                img.clients__image(src='img/clients/mishka-logo.png' srcset='img/clients/mishka-logo@2x.png 2x' width='173' height='84' alt='Логотип MISHKA.')
+    +clients(class='page__section page__section--border-top page__section--border-bottom')
