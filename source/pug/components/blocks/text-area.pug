@@ -1,0 +1,4 @@
+mixin text-area(name, label, placeholder, text)
+  label.text-area&attributes(attributes)
+    span.text-area__label= label
+    textarea.text-area__control(name=name placeholder=placeholder)= text

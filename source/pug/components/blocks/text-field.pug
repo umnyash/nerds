@@ -1,0 +1,4 @@
+mixin text-field(name, type, label, placeholder, value)
+  label.text-field&attributes(attributes)
+    span.text-field__label= label
+    input.text-field__control(type=type name=name placeholder=placeholder value=value)
