@@ -32,11 +32,5 @@ mixin page-footer
         .page-footer__socials-text-wrapper
           p.page-footer__socials-slogan Давайте дружить, это выгодно!
           p.page-footer__socials-text Скидка 10% для друзей из социальных сетей.
-  .modal
-    span.modal__focus-stop(aria-hidden='true' tabindex='0')
-    .modal__inner
-      button.modal__close(type='button')
-        span.visually-hidden Закрыть
-      .modal__content
-    span.modal__focus-stop(aria-hidden='true' tabindex='0')
+  +modal
   script(src='js/main.js' type='module')

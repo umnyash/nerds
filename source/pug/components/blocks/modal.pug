@@ -1,0 +1,8 @@
+mixin modal
+  .modal&attributes(attributes)
+    span.modal__focus-stop(aria-hidden='true' tabindex='0')
+    .modal__inner
+      button.modal__close(type='button')
+        span.visually-hidden Закрыть
+      .modal__content
+    span.modal__focus-stop(aria-hidden='true' tabindex='0')
