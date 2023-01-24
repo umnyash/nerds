@@ -6,12 +6,5 @@ block variables
 
 block content
   main(class= pageClass)
-    header.main-header
-      .container
-        h1.main-header__heading.heading.heading--size--xl Магазин готовых шаблонов
-    section.catalog
-      .catalog__container.container
-        +filter('https://echo.htmlacademy.ru/courses', 'get')(class='catalog__filter')
-        +sorting(class='catalog__sorting')
-        +products(class='catalog__products')
-        +pagination(class='catalog__pagination')
+    +main-header('Магазин готовых шаблонов')
+    +catalog

@@ -1,0 +1,7 @@
+mixin catalog
+  section.catalog&attributes(attributes)
+    .catalog__container.container
+      +filter('https://echo.htmlacademy.ru/courses', 'get')(class='catalog__filter')
+      +sorting(class='catalog__sorting')
+      +products(class='catalog__products')
+      +pagination(class='catalog__pagination')
