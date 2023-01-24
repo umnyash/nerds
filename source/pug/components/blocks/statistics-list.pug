@@ -1,0 +1,12 @@
+mixin statistics-list__item(key, value)
+  .statistics-list__item
+    dt.statistics-list__key= key
+    dd.statistics-list__value!= `${value}<span class="statistics-list__value-measure">%</span>`
+
+mixin statistics-list
+  .statistics-list&attributes(attributes)
+    p.statistics-list__heading с 2004 года любим точность во всем:
+    dl.statistics-list__items
+      +statistics-list__item('Уровень самоотдачи', '16')
+      +statistics-list__item('Соблюдение сроков', '100')
+      +statistics-list__item('Минимальная предоплата', '50')

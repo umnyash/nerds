@@ -47,26 +47,14 @@ block content
         .about-us__description
           p.about-us__lead.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
           p.about-us__text Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива. Работаем не покладая рук, как роботы.
-          .about-us__list.list
-            p.list__heading Выполняем заказы на разработку:
-            ul.list__items
-              li.list__item Веб-сайтов любой сложности
-              li.list__item Мобильных приложений для iOS и Android
-              li.list__item Слайдшоу и видео для корпоративных презентаций
+          +list('Выполняем заказы на разработку:', [
+            'Веб-сайтов любой сложности',
+            'Мобильных приложений для iOS и Android',
+            'Слайдшоу и видео для корпоративных презентаций'
+          ])(class='about-us__list')
         .about-us__statistics
           picture.logo-alter
             source(type='image/webp' srcset='img/logo-alter.webp, img/logo-alter@2x.webp 2x')
             img.logo-alter__image(src='img/logo-alter.png' srcset="img/logo-alter@2x.png" width='360' height='208' alt='Логотип в виде надписи nёrd\'s на фоне празднично разбросанных красных, синих, жёлтых, зелёных кругов и палочек.')
-          .statistics-list
-            p.statistics-list__heading с 2004 года любим точность во всем:
-            dl.statistics-list__items
-              .statistics-list__item
-                dt.statistics-list__key Уровень самоотдачи
-                dd.statistics-list__value 146#[span.statistics-list__value-measure %]
-              .statistics-list__item
-                dt.statistics-list__key Соблюдение сроков
-                dd.statistics-list__value 100#[span.statistics-list__value-measure %]
-              .statistics-list__item
-                dt.statistics-list__key Минимальная предоплата
-                dd.statistics-list__value 50#[span.statistics-list__value-measure %]
+          +statistics-list
     +clients(class='page__section page__section--border-top page__section--border-bottom')

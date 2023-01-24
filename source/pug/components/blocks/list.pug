@@ -1,0 +1,6 @@
+mixin list(heading, items)
+  .list&attributes(attributes)
+    p.list__heading= heading
+    ul.list__items
+      each item in items
+        li.list__item= item
