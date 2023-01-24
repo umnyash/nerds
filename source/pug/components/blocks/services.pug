@@ -1,0 +1,17 @@
+mixin services__item(name, heading, text, link, buttonTheme)
+  li.services__item.services__item--web-sites(class=`services__item--${name}`)
+    h3.services__name= heading
+    p.services__text!= text
+    if buttonTheme
+      +button('a', 'Заказать', '', link)(class=`services__button button--theme--${buttonTheme}`)
+    else
+      +button('a', 'Заказать', '', link)(class='services__button')
+
+mixin services
+  section.services&attributes(attributes)
+    .container
+      h2.visually-hidden Услуги
+      ul.services__list
+        +services__item('web-sites', 'Веб-сайты', 'Мир никогда не будет прежним после того как увидит ваш сайт!', '#!')
+        +services__item('apps', 'Приложения', 'Покорите топ-10 приложений в&nbsp;AppStore и Google Play', '#!', 2)
+        +services__item('presentations', 'Презентации', 'Вы даже не подозреваете, насколько вы изумительны!', '#!', 3)

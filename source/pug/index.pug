@@ -40,22 +40,7 @@ block content
             li.slider__slide-button-wrapper
               button.slider__slide-button(data-number='2' type='button')
                 span.visually-hidden Показать слайд № 3
-    section.services
-      .container
-        h2.visually-hidden Услуги
-        ul.services__list
-          li.services__item.services__item--web-sites
-            h3.services__name Веб-сайты
-            p.services__text Мир никогда не будет прежним после того как увидит ваш сайт!
-            +button('a', 'Заказать', '', '#!')(class='services__button')
-          li.services__item.services__item--apps
-            h3.services__name Приложения
-            p.services__text Покорите топ-10 приложений в&nbsp;AppStore и Google Play
-            +button('a', 'Заказать', '', '#!')(class='button--theme--2 services__button')
-          li.services__item.services__item--presentations
-            h3.services__name Презентации
-            p.services__text Вы даже не подозреваете, насколько вы изумительны!
-            +button('a', 'Заказать', '', '#!')(class='button--theme--3 services__button')
+    +services
     section.page__section.page__section--border-top.about-us
       .about-us__container.container
         h2.visually-hidden О нас
