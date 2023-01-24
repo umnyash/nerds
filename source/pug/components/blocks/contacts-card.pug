@@ -1,0 +1,6 @@
+mixin contacts-card
+  .contacts-card&attributes(attributes)
+    h3.contacts-card__heading Nёrds design studio
+    p.contacts-card__item наб. Реки Карповки,#[br] 5 лит П, Санкт-Петербург
+    a.contacts-card__item.contacts-card__item--link(href='tel:+78005558628') +7 800 555-86-28
+    +button('a', 'Напишите нам', '', '#contacts-letter')(class='contacts-card__button' data-modal-open="letter")

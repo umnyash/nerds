@@ -1,0 +1,7 @@
+mixin contacts
+  section.contacts&attributes(attributes)
+    h2.visually-hidden Контакты
+    +map(class='contacts__map')
+    .contacts__card-wrapper.container
+      +contacts-card(class='contacts__card')
+    +letter(id='contacts-letter' data-modal-content='letter')
