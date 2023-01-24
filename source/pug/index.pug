@@ -7,39 +7,7 @@ block variables
 block content
   main(class= pageClass)
     h1.visually-hidden Дизайн-студия "Nёrds"
-    section.features
-      .container
-        h2.visually-hidden Особенности нашей студии
-        .features__slider.slider
-          ul.slider__list
-            li.slider__item.slider__item--current
-              section.feature.feature--1
-                .feature__inner
-                  h3.feature__heading.heading.heading--size--xl Долго, дорого, скрупулёзно
-                  p.feature__text Математически выверенный дизайн#[br] для вашего сайта или мобильного приложения.
-                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
-            li.slider__item
-              section.feature.feature--2
-                .feature__inner
-                  h3.feature__heading.heading.heading--size--xl Любим математику как никто другой
-                  p.feature__text Никакого креатива, только математические формулы для расчета идеальных пропорций.
-                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
-            li.slider__item
-              section.feature.feature--3
-                .feature__inner
-                  h3.feature__heading.heading.heading--size--xl Только ночь, только хардкор
-                  p.feature__text Работать днем, как все? Мы против этого.#[br] Ближе к полуночи работа только начинается.
-                  +button('a', 'Узнать больше', '', '#!')(class='feature__button')
-          ul.slider__slides-buttons
-            li.slider__slide-button-wrapper
-              button.slider__slide-button.slider__slide-button--current(data-number='0' type='button')
-                span.visually-hidden Показать слайд № 1
-            li.slider__slide-button-wrapper
-              button.slider__slide-button(data-number='1' type='button')
-                span.visually-hidden Показать слайд № 2
-            li.slider__slide-button-wrapper
-              button.slider__slide-button(data-number='2' type='button')
-                span.visually-hidden Показать слайд № 3
+    +features
     +services
     +about-us(class='page__section page__section--border-top')
     +clients(class='page__section page__section--border-top page__section--border-bottom')

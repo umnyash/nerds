@@ -1,0 +1,18 @@
+mixin slider__slide-button-wrapper(number, isCurrent)
+  li.slider__slide-button-wrapper
+    button.slider__slide-button(class= isCurrent ? 'slider__slide-button--current' : false data-number=`${number}` type='button')
+      span.visually-hidden= `Показать слайд № ${number + 1}`
+
+mixin slider
+  .slider&attributes(attributes)
+    ul.slider__list
+      li.slider__item.slider__item--current
+        +feature('Долго, дорого, скрупулёзно', 'Математически выверенный дизайн<br> для вашего сайта или мобильного приложения.', '#!')(class='feature--1')
+      li.slider__item
+        +feature('Любим математику как никто другой', 'Никакого креатива, только математические формулы для расчета идеальных пропорций.', '#!')(class='feature--2')
+      li.slider__item
+        +feature('Только ночь, только хардкор', 'Работать днем, как все? Мы против этого.<br> Ближе к полуночи работа только начинается.', '#!')(class='feature--3')
+    ul.slider__slides-buttons
+      +slider__slide-button-wrapper(0, true)
+      +slider__slide-button-wrapper(1)
+      +slider__slide-button-wrapper(2)

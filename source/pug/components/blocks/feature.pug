@@ -1,0 +1,6 @@
+mixin feature(heading, text, link)
+  section.feature&attributes(attributes)
+    .feature__inner
+      h3.feature__heading.heading.heading--size--xl= heading
+      p.feature__text!= text
+      +button('a', 'Узнать больше', '', link)(class='feature__button')
