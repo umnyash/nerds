@@ -2,10 +2,7 @@ mixin page-footer
   footer.page-footer&attributes(attributes)
     section.contacts(id='contacts')
       h2.visually-hidden Контакты
-      .contacts__map.map
-        picture.map__image-wrapper
-          source(type='image/webp' srcset='img/location.webp, img/location@2x.webp 2x')
-          img.map__image(src='img/location.png' srcset='img/location@2x.png' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')
+      +map(class='contacts__map')
       .contacts__card-wrapper.container
         .contacts__card.contacts-card
           h3.contacts-card__heading Nёrds design studio
