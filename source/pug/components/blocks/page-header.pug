@@ -4,15 +4,5 @@ mixin page-header
       a.logo(href= pageClass === 'index-page' ? false : 'index.html')
         img(src='img/logo.svg' width='160' height='66' alt='Логотип в виде надписи nёrd\'s')
       nav.page-header__navigation
-        ul.page-header__site-navigation.site-navigation
-          li.site-navigation__item
-            a.site-navigation__link(href='#!') Студия
-          li.site-navigation__item
-            a.site-navigation__link(href='#!') Клиенты
-          li.site-navigation__item
-            a.site-navigation__link(class= pageClass === 'catalog-page' ? 'site-navigation__link--current' : false href= pageClass === 'catalog-page' ? false : 'catalog.html') Магазин
-          li.site-navigation__item
-            a.site-navigation__link(href='#contacts') Контакты
-        ul.page-header__user-navigation.user-navigation
-          li.user-navigation__item
-            a.user-navigation__link.user-navigation__link--with-icon.user-navigation__link--with-icon--cart(class= pageClass === 'cart-page' ? 'user-navigation__link--current' : false href= pageClass === 'cart-page' ? false : '#!') Корзина
+        +site-navigation(class='page-header__site-navigation')
+        +user-navigation(class='page-header__user-navigation')

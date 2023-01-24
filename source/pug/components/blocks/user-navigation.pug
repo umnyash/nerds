@@ -1,0 +1,7 @@
+mixin user-navigation__item(text, href, page)
+  li.user-navigation__item
+    a.user-navigation__link(class= pageClass === page ? 'user-navigation__link--current' : false href= pageClass === page ? false : '#!')&attributes(attributes)= text
+
+mixin user-navigation
+  ul.user-navigation&attributes(attributes)
+    +user-navigation__item('Корзина', '#!', 'cart-page')(class='user-navigation__link--with-icon user-navigation__link--with-icon--cart')

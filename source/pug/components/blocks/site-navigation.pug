@@ -1,0 +1,10 @@
+mixin site-navigation__item(text, href, page)
+  li.site-navigation__item
+    a.site-navigation__link(class= pageClass === page ? 'site-navigation__link--current' : false href= pageClass === page ? false : href)&attributes(attributes)= text
+
+mixin site-navigation
+  ul.site-navigation&attributes(attributes)
+    +site-navigation__item('Студия', '#!')
+    +site-navigation__item('Клиенты', '#!')
+    +site-navigation__item('Магазин', 'catalog.html', 'catalog-page')
+    +site-navigation__item('Контакты', '#!')
