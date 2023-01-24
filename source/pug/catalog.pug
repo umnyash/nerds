@@ -12,32 +12,6 @@ block content
     section.catalog
       .catalog__container.container
         +filter('https://echo.htmlacademy.ru/courses', 'get')(class='catalog__filter')
-        dl.catalog__sorting.sorting
-          dt.sorting__heading Сортировать:
-          dd.sorting__parameter
-            ul.sorting__types
-              li.sorting__type
-                a.sorting__link.sorting__link--current(href='#!') По цене
-              li.sorting__type
-                a.sorting__link(href='#!') По типу
-              li.sorting__type
-                a.sorting__link(href='#!') По названию
-          dd.sorting__parameter
-            ul.sorting__directions
-              li.sorting__direction
-                a.sorting__button.sorting__button--current(href='#!')
-                  span.visually-hidden По убыванию
-              li.sorting__direction
-                a.sorting__button.sorting__button--up(href='#!')
-                  span.visually-hidden По возрастанию
+        +sorting(class='catalog__sorting')
         +products(class='catalog__products')
-        .catalog__pagination.pagination
-          ul.pagination__list
-            li.pagination__item
-              +button('a', '1', '', '#!')(class='button--theme--4 button--current')
-            li.pagination__item
-              +button('a', '2', '', '#!')(class='button--theme--4')
-            li.pagination__item
-              +button('a', '3', '', '#!')(class='button--theme--4')
-            li.pagination__item
-              +button('a', 'Следующая', '', '#!')(class='button--theme--4 pagination__next')
+        +pagination(class='catalog__pagination')

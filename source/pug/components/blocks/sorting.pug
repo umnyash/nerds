@@ -1,0 +1,20 @@
+mixin sorting__type(text, href, isCurrent)
+  li.sorting__type
+    a.sorting__link(class= isCurrent ? 'sorting__link--current' : false href=href)= text
+
+mixin sorting
+  dl.sorting&attributes(attributes)
+    dt.sorting__heading Сортировать:
+    dd.sorting__parameter
+      ul.sorting__types
+        +sorting__type('По цене', '#!', true)
+        +sorting__type('По типу', '#!')
+        +sorting__type('По названию', '#!')
+    dd.sorting__parameter
+      ul.sorting__directions
+        li.sorting__direction
+          a.sorting__button.sorting__button--current(href='#!')
+            span.visually-hidden По убыванию
+        li.sorting__direction
+          a.sorting__button.sorting__button--up(href='#!')
+            span.visually-hidden По возрастанию

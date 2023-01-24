@@ -1,0 +1,11 @@
+mixin pagination
+  .pagination&attributes(attributes)
+    ul.pagination__list
+      li.pagination__item
+        +button('a', '1', '', '#!')(class='button--theme--4 button--current')
+      li.pagination__item
+        +button('a', '2', '', '#!')(class='button--theme--4')
+      li.pagination__item
+        +button('a', '3', '', '#!')(class='button--theme--4')
+      li.pagination__item
+        +button('a', 'Следующая', '', '#!')(class='button--theme--4 pagination__next')
