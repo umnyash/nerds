@@ -1,0 +1,15 @@
+mixin about-us
+  section.about-us&attributes(attributes)
+    .about-us__container.container
+      h2.visually-hidden О нас
+      .about-us__description
+        p.about-us__lead.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
+        p.about-us__text Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива. Работаем не покладая рук, как роботы.
+        +list('Выполняем заказы на разработку:', [
+          'Веб-сайтов любой сложности',
+          'Мобильных приложений для iOS и Android',
+          'Слайдшоу и видео для корпоративных презентаций'
+        ])(class='about-us__list')
+      .about-us__statistics
+        +logo-alter
+        +statistics-list

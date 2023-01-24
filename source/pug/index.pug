@@ -41,20 +41,5 @@ block content
               button.slider__slide-button(data-number='2' type='button')
                 span.visually-hidden Показать слайд № 3
     +services
-    section.page__section.page__section--border-top.about-us
-      .about-us__container.container
-        h2.visually-hidden О нас
-        .about-us__description
-          p.about-us__lead.heading.heading--size--l Мы — маленькая, но гордая дизайн-студия из Краснодара.
-          p.about-us__text Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива. Работаем не покладая рук, как роботы.
-          +list('Выполняем заказы на разработку:', [
-            'Веб-сайтов любой сложности',
-            'Мобильных приложений для iOS и Android',
-            'Слайдшоу и видео для корпоративных презентаций'
-          ])(class='about-us__list')
-        .about-us__statistics
-          picture.logo-alter
-            source(type='image/webp' srcset='img/logo-alter.webp, img/logo-alter@2x.webp 2x')
-            img.logo-alter__image(src='img/logo-alter.png' srcset="img/logo-alter@2x.png" width='360' height='208' alt='Логотип в виде надписи nёrd\'s на фоне празднично разбросанных красных, синих, жёлтых, зелёных кругов и палочек.')
-          +statistics-list
+    +about-us(class='page__section page__section--border-top')
     +clients(class='page__section page__section--border-top page__section--border-bottom')
