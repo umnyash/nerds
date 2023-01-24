@@ -1,8 +1,7 @@
 mixin page-header
   header.page-header&attributes(attributes)
     .page-header__container.container
-      a.logo(href= pageClass === 'index-page' ? false : 'index.html')
-        img(src='img/logo.svg' width='160' height='66' alt='Логотип в виде надписи nёrd\'s')
+      +logo
       nav.page-header__navigation
         +site-navigation(class='page-header__site-navigation')
         +user-navigation(class='page-header__user-navigation')
