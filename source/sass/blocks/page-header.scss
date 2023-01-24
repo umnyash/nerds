@@ -12,15 +12,16 @@
 
 .page-header__navigation {
   display: grid;
+  margin: 10px 0 0;
   grid-template-columns: 1fr auto;
   column-gap: 96px;
   align-items: center;
 }
 
 .page-header__site-navigation {
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 
 .page-header__user-navigation {
-  margin: 10px 0 0;
+  margin: 0;
 }

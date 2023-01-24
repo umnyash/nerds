@@ -20,12 +20,14 @@
 .site-navigation__link {
   display: block;
   padding: 17px 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   color: inherit;
   text-decoration: none;
   transition: color $duration;
 
   &--current {
-    border-bottom: 2px solid $special-color-1;
+    border-bottom-color: $special-color-1;
   }
 
   &[href]:hover,
