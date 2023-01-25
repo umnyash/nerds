@@ -2,4 +2,4 @@ mixin map
   .map&attributes(attributes)
     picture.map__image-wrapper
       source(type='image/webp' srcset='img/location.webp, img/location@2x.webp 2x')
-      img.map__image(src='img/location.png' srcset='img/location@2x.png' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')
+      img.map__image(src='img/location.png' srcset='img/location@2x.png' loading='lazy' width='1440' height='416' alt='Расположении студии на карте по адресу: наб. Реки Карповки, 5 лит П, Санкт-Петербург.')

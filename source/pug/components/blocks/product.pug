@@ -7,4 +7,4 @@ mixin product(product)
       +button('a', `${product.price} ₽`, '', '#!')(class='product__button')
     picture.product__img-wrapper
       source(type='image/webp' srcset=`img/products/${product.imageWebp}, img/products/${product.imageWebp2x} 2x`)
-      img.product__img(src=`img/products/${product.image}` srcset=`img/products/${product.image2x} 2x` width='358' height='578' alt=product.imageDescription)
+      img.product__img(src=`img/products/${product.image}` srcset=`img/products/${product.image2x} 2x` loading='lazy' width='358' height='578' alt=product.imageDescription)

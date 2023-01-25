@@ -8,7 +8,7 @@ mixin clients__item(client)
           img.clients__image(src=`img/clients/${client.imageSvg}` width=client.imageWidth height=client.imageHeight alt=client.imageDescription)
         else
           source(type='image/webp' srcset=`img/clients/${client.imageWebp}, img/clients/${client.imageWebp2x} 2x`)
-          img.clients__image(src=`img/clients/${client.image}` srcset=`img/clients/${client.image2x} 2x` width=client.imageWidth height=client.imageHeight alt=client.imageDescription)
+          img.clients__image(src=`img/clients/${client.image}` srcset=`img/clients/${client.image2x} 2x` loading='lazy' width=client.imageWidth height=client.imageHeight alt=client.imageDescription)
 
 mixin clients
   section.clients&attributes(attributes)
