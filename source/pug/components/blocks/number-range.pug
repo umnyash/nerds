@@ -1,0 +1,8 @@
+mixin number-range
+  .number-range&attributes(attributes)
+    .number-range__range-wrapper(aria-hidden='true')
+      .number-range__range.range(data-min-value='0' data-max-value='100')
+        button.range__button.range__button--min(type='button')
+        button.range__button.range__button--max(type='button')
+    +number-field('min-price', 'От', '0', '0', '200000', '1')(class='number-range__min')
+    +number-field('max-price', 'До', '150000', '0', '200000', '1')(class='number-range__max')
