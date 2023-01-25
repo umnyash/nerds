@@ -10,8 +10,8 @@ const initNumberRange = (numberRange) => {
   };
 
   const setFieldsValueFromRange = () => {
-    minField.value =  String(rangeLimit * range.dataset.minValue / 100);
-    maxField.value =  String(rangeLimit * range.dataset.maxValue / 100);
+    minField.value =  Math.round(rangeLimit * range.dataset.minValue / 100);
+    maxField.value =  Math.round(rangeLimit * range.dataset.maxValue / 100);
   };
 
   const adjustFieldValue = (field) => {
