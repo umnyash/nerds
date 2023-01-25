@@ -1,12 +1,9 @@
 const initRange = (range) => {
   const changeEvent = new Event('change', { bubbles: true });
 
-  const buttonMin = range.querySelector('.range__button[data-type="min"]');
-  const buttonMax = range.querySelector('.range__button[data-type="max"]');
+  const buttonMin = range.querySelector('.range__button--min');
+  const buttonMax = range.querySelector('.range__button--max');
   const halfButtonWidth = buttonMin.offsetWidth / 2;
-
-  buttonMin.style.left = '0%';
-  buttonMax.style.left = '100%';
 
   let rangeStart = 0;
   let rangeWidth = 0;
@@ -16,11 +13,6 @@ const initRange = (range) => {
   let dragStartX = 0;
   let activeButton = null;
   let activeButtonStartPosition = 0;
-
-  const setScale = (min, max) => {
-    range.style.setProperty('--button-min-position', `${min}%`);
-    range.style.setProperty('--button-max-position', `${max}%`);
-  };
 
   const calcButtonPosition = (shift) => {
     let position = activeButtonStartPosition + shift;
@@ -36,22 +28,25 @@ const initRange = (range) => {
   }
 
   const setButtonPosition = (position) => {
-    activeButton.style.left = `${position}%`;
+    if (activeButton === buttonMin) {
+      range.dataset.minValue = position;
+      range.style.setProperty('--button-min-position', `${range.dataset.minValue}%`);
 
-    let buttonMinValue = parseInt(buttonMin.style.left, 10);
-    let buttonMaxValue = parseInt(buttonMax.style.left, 10);
-
-    if (activeButton === buttonMin && buttonMinValue > buttonMaxValue) {
-      buttonMaxValue = buttonMinValue;
-      buttonMax.style.left = `${buttonMaxValue}%`;
+      if (+range.dataset.minValue > +range.dataset.maxValue) {
+        range.dataset.maxValue = range.dataset.minValue;
+        range.style.setProperty('--button-max-position', `${range.dataset.maxValue}%`);
+      }
     }
 
-    if (activeButton === buttonMax && buttonMaxValue < buttonMinValue) {
-      buttonMinValue = buttonMaxValue;
-      buttonMin.style.left = `${buttonMinValue}%`;
-    }
+    if (activeButton === buttonMax) {
+      range.dataset.maxValue = position;
+      range.style.setProperty('--button-max-position', `${range.dataset.maxValue}%`);
 
-    setScale(buttonMinValue, buttonMaxValue);
+      if (+range.dataset.maxValue < +range.dataset.minValue) {
+        range.dataset.minValue = range.dataset.maxValue;
+        range.style.setProperty('--button-min-position', `${range.dataset.minValue}%`)
+      }
+    }
 
     range.dispatchEvent(changeEvent);
   };
@@ -74,50 +69,37 @@ const initRange = (range) => {
     rangeEnd = rangeStart + rangeWidth;
     buttonMinPosition = rangeStart - halfButtonWidth;
     buttonMaxPosition = rangeEnd - halfButtonWidth;
-    dragStartX = evt.clientX;
     activeButtonStartPosition = activeButton.getBoundingClientRect().x;
-    activeButton.classList.add('range__button--active');
 
     if (!evt.key) {
+      activeButton.classList.add('range__button--active');
+      dragStartX = evt.clientX;
       document.addEventListener('mousemove', dragButton);
       document.addEventListener('mouseup', endDragButton);
     }
   };
 
+  const onButtonKeydown = (evt) => {
+    let shift = 1;
+
+    if (evt.key === 'ArrowRight') {
+      evt.preventDefault();
+    }
+
+    if (evt.key === 'ArrowLeft') {
+      evt.preventDefault();
+      shift *= -1;
+    }
+
+    startDragButton(evt);
+    setButtonPosition(calcButtonPosition(shift));
+  };
+
   buttonMin.addEventListener('mousedown', startDragButton);
   buttonMax.addEventListener('mousedown', startDragButton);
 
-  buttonMin.addEventListener('keydown', (evt) => {
-    if (evt.key === 'ArrowRight') {
-      evt.preventDefault();
-      startDragButton(evt);
-      const shift = 1;
-      setButtonPosition(calcButtonPosition(shift));
-    }
-
-    if (evt.key === 'ArrowLeft') {
-      evt.preventDefault();
-      startDragButton(evt);
-      const shift = -1;
-      setButtonPosition(calcButtonPosition(shift));
-    }
-  })
-
-  buttonMax.addEventListener('keydown', (evt) => {
-    if (evt.key === 'ArrowRight') {
-      evt.preventDefault();
-      startDragButton(evt);
-      const shift = 1;
-      setButtonPosition(calcButtonPosition(shift));
-    }
-
-    if (evt.key === 'ArrowLeft') {
-      evt.preventDefault();
-      startDragButton(evt);
-      const shift = -1;
-      setButtonPosition(calcButtonPosition(shift));
-    }
-  })
+  buttonMin.addEventListener('keydown', onButtonKeydown);
+  buttonMax.addEventListener('keydown', onButtonKeydown);
 };
 
 export { initRange };

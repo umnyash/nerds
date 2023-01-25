@@ -1,45 +1,55 @@
 const initNumberRange = (numberRange) => {
-  const inputEvent = new Event('input', { bubbles: true });
-
   const range = numberRange.querySelector('.range');
-  const rangeMinButton = range.querySelector('.range__button[data-type="min"]');
-  const rangeMaxButton = range.querySelector('.range__button[data-type="max"]');
-  const minField = numberRange.querySelector('.number-field__control[data-type="min"]');
-  const maxField = numberRange.querySelector('.number-field__control[data-type="max"]');
+  const minField = numberRange.querySelector('.number-range__min .number-field__control');
+  const maxField = numberRange.querySelector('.number-range__max .number-field__control');
   const rangeLimit = maxField.max;
 
-  const setRangeButton = (button, value) => {
-    button.style.left = `${value / rangeLimit * 100}%`;
-    range.style.setProperty(`--button-${button.dataset.type}-position`, button.style.left);
+  const setRangeValue = (type, value) => {
+    range.dataset[`${type}Value`] = value / rangeLimit * 100;
+    range.style.setProperty(`--button-${type}-position`, `${range.dataset[`${type}Value`]}%`);
   };
 
-  const setFieldValueFromRange = (field, button) => {
-    field.value = String(rangeLimit * parseInt(button.style.left, 10) / 100);
+  const setFieldsValueFromRange = () => {
+    minField.value =  String(rangeLimit * range.dataset.minValue / 100);
+    maxField.value =  String(rangeLimit * range.dataset.maxValue / 100);
   };
 
-  setRangeButton(rangeMinButton, minField.value);
-  setRangeButton(rangeMaxButton, maxField.value);
+  const adjustFieldValue = (field) => {
+    if (+field.value < +field.min) {
+      field.value = field.min;
+    }
+
+    if (+field.value > +field.max) {
+      field.value = field.max;
+    }
+  };
 
   minField.addEventListener('input', () => {
+    adjustFieldValue(minField);
+
     if (+minField.value > +maxField.value) {
       maxField.value = minField.value;
-      setRangeButton(rangeMaxButton, maxField.value);
+      setRangeValue('max', maxField.value);
     }
-    setRangeButton(rangeMinButton, minField.value);
+    setRangeValue('min', minField.value);
   });
 
   maxField.addEventListener('input', () => {
+    adjustFieldValue(maxField);
+
     if (+maxField.value < +minField.value) {
       minField.value = maxField.value;
-      setRangeButton(rangeMinButton, minField.value);
+      setRangeValue('min', minField.value);
     }
-    setRangeButton(rangeMaxButton, maxField.value);
+    setRangeValue('max', maxField.value);
   });
 
   range.addEventListener('change', () => {
-    setFieldValueFromRange(minField, rangeMinButton);
-    setFieldValueFromRange(maxField, rangeMaxButton);
-  })
+    setFieldsValueFromRange();
+  });
+
+  setRangeValue('min', minField.value);
+  setRangeValue('max', maxField.value);
 };
 
 export { initNumberRange };
