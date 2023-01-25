@@ -943,6 +943,12 @@ html {
   transform: translateX(-50%);
   cursor: grab;
 }
+.range__button--min {
+  left: var(--button-min-position);
+}
+.range__button--max {
+  left: var(--button-max-position);
+}
 .range__button:hover, .range__button:focus-visible, .range__button--active {
   border-color: #00ca74;
   background-color: #ffffff;
