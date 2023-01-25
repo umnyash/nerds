@@ -52,13 +52,18 @@ const initRange = (range) => {
   };
 
   const dragButton = (evt) => {
-    const shift = evt.clientX - dragStartX;
+    const clientX = evt.clientX || evt.touches[0].clientX;
+    const shift = clientX - dragStartX;
     setButtonPosition(calcButtonPosition(shift));
   };
 
   const endDragButton = () => {
     document.removeEventListener('mousemove', dragButton);
     document.removeEventListener('mouseup', endDragButton);
+
+    document.removeEventListener('touchmove', dragButton);
+    document.removeEventListener('touchend', endDragButton);
+
     activeButton.classList.remove('range__button--active');
   };
 
@@ -73,10 +78,17 @@ const initRange = (range) => {
 
     if (!evt.key) {
       activeButton.classList.add('range__button--active');
-      dragStartX = evt.clientX;
+      dragStartX = evt.clientX || evt.touches[0].clientX;
+
       document.addEventListener('mousemove', dragButton);
       document.addEventListener('mouseup', endDragButton);
+
+      document.addEventListener('touchmove', dragButton);
+      document.addEventListener('touchend', endDragButton);
     }
+
+    console.log(evt)
+    console.log(evt.clientX)
   };
 
   const onButtonKeydown = (evt) => {
@@ -97,6 +109,9 @@ const initRange = (range) => {
 
   buttonMin.addEventListener('mousedown', startDragButton);
   buttonMax.addEventListener('mousedown', startDragButton);
+
+  buttonMin.addEventListener('touchstart', startDragButton);
+  buttonMax.addEventListener('touchstart', startDragButton);
 
   buttonMin.addEventListener('keydown', onButtonKeydown);
   buttonMax.addEventListener('keydown', onButtonKeydown);
