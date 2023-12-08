@@ -1,5 +1,5 @@
 mixin filter(action, method)
-  form.catalog__filter.filter(action=action method=method)&attributes(attributes)
+  form.filter(action=action method=method)&attributes(attributes)
     fieldset.filter__section
       legend.filter__section-heading Стоимость:
       +number-range(class='filter__number-range')
